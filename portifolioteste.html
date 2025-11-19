@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Francisco William - Desenvolvedor Full Stack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      color: #333;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 30px auto;
+      background: #ffffff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+      display: flex;
+      min-height: 90vh;
+    }
+
+    /* COLUNA ESQUERDA */
+    .sidebar {
+      width: 30%;
+      background: #1f3244;
+      color: #f5f5f5;
+      padding: 30px 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .role {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background: #2e88ff;
+      font-size: 0.75rem;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+
+    .section-title-left {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 10px 0 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .info-list {
+      list-style: none;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    /* links da área de contato */
+    .info-list a {
+      color: inherit;          /* mesma cor do texto */
+      text-decoration: none;   /* sem sublinhado */
+    }
+
+    .info-list a:hover {
+      text-decoration: underline; /* sublinha no hover (opcional) */
+    }
+
+    .skills-list,
+    .simple-list {
+      list-style: none;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-top: 4px;
+    }
+
+    .skills-list li::before,
+    .simple-list li::before {
+      content: "• ";
+      color: #2e88ff;
+    }
+
+    .language-bar {
+      margin-top: 8px;
+    }
+
+    .language-label {
+      font-size: 0.8rem;
+      margin-bottom: 2px;
+    }
+
+    .bar-bg {
+      width: 100%;
+      height: 6px;
+      background: #314457;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: #2e88ff;
+    }
+
+    /* COLUNA DIREITA */
+    .main {
+      width: 70%;
+      padding: 30px 35px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .section-title {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title span.icon {
+      font-size: 1.1rem;
+    }
+
+    .divider {
+      height: 2px;
+      background: #e0e5f0;
+      margin: 4px 0 10px;
+    }
+
+    .paragraph {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .project {
+      margin-bottom: 15px;
+    }
+
+    .project-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+
+    .project-techs {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: #666;
+      margin-bottom: 3px;
+    }
+
+    .project-desc {
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px 30px;
+    }
+
+    .subsection-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .bullet-list {
+      list-style: none;
+      font-size: 0.87rem;
+      line-height: 1.5;
+    }
+
+    .bullet-list li::before {
+      content: "• ";
+      color: #2e88ff;
+    }
+
+    .two-column-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px 30px;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        flex-direction: column;
+      }
+      .sidebar,
+      .main {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- COLUNA ESQUERDA -->
+    <aside class="sidebar">
+      <header>
+        <div class="name">FRANCISCO WILLIAM<br />DE SOUSA SILVA</div>
+        <div class="role">Desenvolvedor Full Stack Júnior</div>
+        <div>
+          <span class="pill">React</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">Python</span>
+          <span class="pill">Kotlin</span>
+        </div>
+      </header>
+
+      <section>
+        <div class="section-title-left">Contato</div>
+        <ul class="info-list">
+          <li><span class="label">Telefone:</span> (86) 99811-1666</li>
+          <li><span class="label">E-mail:</span> <a href="mailto:franciscowilliam153@gmail.com">franciscowilliam153@gmail.com</a></li>
+          <li><span class="label">Cidade:</span> Piripiri - PI</li>
+          <li>
+            <span class="label">GitHub:</span>
+            <a href="https://github.com/Astrobusiness" target="_blank">
+              github.com/Astrobusiness
+            </a>
+          </li>
+          <li>
+            <span class="label">LinkedIn:</span>
+            <a href="https://www.linkedin.com/in/francisco-william-de-sousa-silva-54600537b/" target="_blank">
+              linkedin.com/in/francisco-william-de-sousa-silva-54600537b
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="section-title-left">Competências</div>
+        <ul class="skills-list">
+          <li>HTML5, CSS3 & JavaScript</li>
+          <li>React & Bootstrap</li>
+          <li>Node.js, Python & PHP</li>
+          <li>Flask & APIs RESTful</li>
+          <li>MySQL & PostgreSQL</li>
+          <li>Kotlin & Android Studio</li>
+          <li>Git, Docker & AWS</li>
+          <li>Metodologias Ágeis</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="section-title-left">Formação</div>
+        <ul class="simple-list">
+          <li>Análise e Desenvolvimento de Sistemas<br />Anhanguera – 3º período</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="section-title-left">Cursos</div>
+        <ul class="simple-list">
+          <li>Algoritmos e Lógica de Programação</li>
+          <li>Marketing Digital</li>
+          <li>Pacote Office Avançado</li>
+          <li>Operador de Caixa</li>
+          <li>Vendas & Atendimento ao Público</li>
+          <li>Edição de Vídeos e Fotos</li>
+          <li>Inglês básico (Duolingo)</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="section-title-left">Idiomas</div>
+        <div class="language-bar">
+          <div class="language-label">Português</div>
+          <div class="bar-bg">
+            <div class="bar-fill" style="width: 100%;"></div>
+          </div>
+        </div>
+        <div class="language-bar">
+          <div class="language-label">Inglês</div>
+          <div class="bar-bg">
+            <div class="bar-fill" style="width: 35%;"></div>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <!-- COLUNA DIREITA -->
+    <main class="main">
+      <!-- Perfil profissional -->
+      <section>
+        <div class="section-title">
+          <span class="icon">👤</span> PERFIL PROFISSIONAL
+        </div>
+        <div class="divider"></div>
+        <p class="paragraph">
+          Estudante de Análise e Desenvolvimento de Sistemas, com experiência profissional na área
+          farmacêutica atuando como caixa e balconista na Drogaria Globo desde 2022. Busco migrar
+          para a área de tecnologia, desenvolvendo projetos em Python, HTML, CSS e JavaScript, com foco em
+          soluções web completas, bem estruturadas e fáceis de usar. Tenho disciplina, aprendizado contínuo
+          e responsabilidade como base da minha rotina de estudo, trabalho e desenvolvimento pessoal.
+        </p>
+      </section>
+
+      <!-- Projetos -->
+      <section>
+        <div class="section-title">
+          <span class="icon">💻</span> PROJETOS DESTACADOS
+        </div>
+        <div class="divider"></div>
+
+        <div class="project">
+          <div class="project-title">Sistema de Gestão de Estoque para Farmácia</div>
+          <div class="project-techs">Python, Flask, MySQL, Bootstrap</div>
+          <div class="project-desc">
+            Aplicação web para controle de produtos, entrada e saída de estoque e geração de relatórios
+            básicos de vendas. Interface responsiva, login de usuários e painel administrativo simples.
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-title">Dashboard de Vendas com Análise de Dados</div>
+          <div class="project-techs">Python, Pandas, HTML, CSS</div>
+          <div class="project-desc">
+            Projeto focado em leitura de arquivos CSV e geração de gráficos de desempenho de vendas,
+            tickets médios e produtos mais vendidos, auxiliando na tomada de decisão.
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-title">Landing Page Responsiva para Serviços de Tecnologia</div>
+          <div class="project-techs">HTML5, CSS3, JavaScript, Design Responsivo</div>
+          <div class="project-desc">
+            Página institucional responsiva com foco em conversão, seções de serviços, depoimentos e
+            formulário de contato, otimizada para dispositivos móveis.
+          </div>
+        </div>
+      </section>
+
+      <!-- Competências Técnicas -->
+      <section>
+        <div class="section-title">
+          <span class="icon">🛠️</span> COMPETÊNCIAS TÉCNICAS
+        </div>
+        <div class="divider"></div>
+
+        <div class="grid-2">
+          <div>
+            <div class="subsection-title">Front-End</div>
+            <ul class="bullet-list">
+              <li>HTML5, CSS3</li>
+              <li>JavaScript ES6+</li>
+              <li>React & Bootstrap</li>
+              <li>Design Responsivo</li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="subsection-title">Back-End</div>
+            <ul class="bullet-list">
+              <li>Node.js & Python</li>
+              <li>Flask & APIs REST</li>
+              <li>MySQL & PostgreSQL</li>
+              <li>PHP</li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="subsection-title">Mobile</div>
+            <ul class="bullet-list">
+              <li>Kotlin</li>
+              <li>Android Studio</li>
+              <li>UX Design</li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="subsection-title">Ferramentas</div>
+            <ul class="bullet-list">
+              <li>Git & GitHub</li>
+              <li>Docker & AWS</li>
+              <li>Metodologias Ágeis</li>
+              <li>VS Code</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Diferenciais -->
+      <section>
+        <div class="section-title">
+          <span class="icon">⭐</span> DIFERENCIAIS
+        </div>
+        <div class="divider"></div>
+        <div class="two-column-list">
+          <div>Capacidade de aprendizado rápido</div>
+          <div>Visão de processos</div>
+          <div>Pensamento analítico</div>
+          <div>Resolução de problemas</div>
+          <div>Adaptabilidade</div>
+          <div>Comprometimento</div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
